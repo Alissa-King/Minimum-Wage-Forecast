@@ -192,7 +192,8 @@ plt.ylabel('Minimum Wage ($)')
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.show()
+plt.savefig('minimum_wage_projections.png')
+plt.close()
 
 # Visualization 2: Minimum Wage vs CPI
 fig, ax1 = plt.subplots(figsize=(12, 6))
@@ -208,7 +209,8 @@ ax2.tick_params(axis='y', labelcolor='tab:orange')
 
 plt.title('Oregon Minimum Wage vs Consumer Price Index (2016-2022)')
 fig.tight_layout()
-plt.show()
+plt.savefig('minimum_wage_vs_cpi.png')
+plt.close()
 
 # Visualization 3: Annual Increases
 plt.figure(figsize=(12, 6))
@@ -222,7 +224,8 @@ plt.title('Annual Increases: Minimum Wage vs CPI')
 plt.xticks(index + bar_width/2, increases_df['Year'])
 plt.legend()
 plt.tight_layout()
-plt.show()
+plt.savefig('annual_increases.png')
+plt.close()
 
 # Visualization 4: Projection Comparison
 melted_forecast = pd.melt(forecast_df, id_vars=['Year'], var_name='Projection Type', value_name='Projected Wage')
@@ -232,7 +235,8 @@ plt.title('Comparison of Minimum Wage Projections (2025-2030)')
 plt.ylabel('Projected Minimum Wage ($)')
 plt.legend(title='Projection Method')
 plt.tight_layout()
-plt.show()
+plt.savefig('projection_comparison.png')
+plt.close()
 
 # Visualization 5: Trend Projection with Confidence Interval
 plt.figure(figsize=(12, 6))
@@ -245,4 +249,5 @@ plt.ylabel('Minimum Wage ($)')
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.show()
+plt.savefig('trend_projection_confidence_interval.png')
+plt.close()
